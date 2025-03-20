@@ -1,0 +1,62 @@
+/* General styles for html and body */
+html, body {
+    height: 100%;
+    margin: 0;
+ }
+ 
+ body {
+    text-align: center;
+ }
+ 
+ /* Header styling */
+ header {
+    border-bottom: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+ }
+ 
+ header ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+ }
+ 
+ header ul li {
+    display: flex;
+    justify-content: center; /* Center text horizontally */
+    align-items: center; /* Center text vertically */
+    list-style-type: none;
+    padding: 7px 10px;
+    text-align: center;
+    height: 40px; /* Ensure there's a height to center within */
+ }
+ 
+ /* Styling for the list of posts from foreach */
+ ul.posts {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    padding-top: 20px;
+ }
+ 
+ .content {
+    display: flex;
+    justify-content: center; /* Center text horizontally */
+    align-items: center; /* Center text vertically */
+    list-style-type: none;
+    text-align: center;
+    padding: 5px 5px;
+ }
+ 
+ .error {
+    color: red;
+    font-weight: bolder;
+ }

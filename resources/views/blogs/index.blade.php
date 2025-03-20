@@ -16,6 +16,11 @@
     <button>Search</button>
 </form>
 
+<ul>
+  @foreach ($blogs as $blog)
+    <li class="content">{{ $blog->content }}</li>
+  @endforeach
+</ul>
 
 </body>
 </html>
