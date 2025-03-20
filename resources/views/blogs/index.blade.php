@@ -1,14 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-<x-navigation></x-navigation>
-    
+<x-layout>
+
 <h1>Blogs</h1>
 
 <form>
@@ -18,9 +9,8 @@
 
 <ul>
   @foreach ($blogs as $blog)
-    <li class="content">{{ $blog->content }}</li>
+    <li class="content"><a href="/blogs/{{ $blog->id }}">{{ $blog->content }}</a></li>
   @endforeach
 </ul>
 
-</body>
-</html>
+</x-layout>
