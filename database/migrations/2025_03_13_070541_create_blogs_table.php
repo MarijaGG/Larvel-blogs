@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->integer('category_id');
             $table->string('content');
+            $table->foreignId('category_id')->nullable()->constrained()->onDelete('set null'); // Make category_id nullable
             $table->timestamps();
         });
     }

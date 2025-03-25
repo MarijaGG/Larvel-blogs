@@ -5,8 +5,9 @@
 </x-slot:title>
 
   <h1>{{ $blog->content }}</h1>
+  <h2>{{ $blog->category->category_name ?? 'No Category' }}</h2>
 
-  <a href="edit/{{ $blog->id }}">Rediģēt<a>
+  <a href="edit/{{ $blog->id }}">Rediģēt</a>
 
   <form action="/blogs/{{ $blog->id }}" method="POST">
     @method('delete')
