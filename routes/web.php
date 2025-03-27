@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CommentController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -10,6 +11,7 @@ Route::get('/', function () {
 
 Route::post('/blogs', [BlogController::class, 'store']);
 Route::post('/categories', [CategoryController::class, 'store']);
+Route::post('/blogs/{blog}/comments', [CommentController::class, 'store'])->name('comments.store');
 
 Route::put('/blogs/{blog}', [BlogController::class, 'update']);
 Route::put('/categories/{category}', [CategoryController::class, 'update']);
@@ -28,6 +30,8 @@ Route::get('/categories/{category}', [CategoryController::class, 'show']);
 
 Route::delete('/blogs/{blog}', [BlogController::class, 'destroy']);
 Route::delete('/categories/{category}', [CategoryController::class, 'destroy']);
+Route::delete('/comments/{comment}', [CommentController::class, 'destroy'])->name('comments.destroy');
+
 
 
 

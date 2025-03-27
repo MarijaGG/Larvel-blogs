@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Blog;
 use App\Models\Category;
+use App\Models\Comment;
 use Illuminate\Http\Request;
 
 
@@ -20,9 +21,11 @@ class BlogController extends Controller
     }
 
     public function show($blog_id) {
-        $blog = Blog::with('category')->findOrFail($blog_id);
+        $blog = Blog::with('category', 'comments')->findOrFail($blog_id);
+    
         return view("blogs.show", compact("blog"));
-    }      
+    }
+      
     
     public function create() {
         $categories = Category::all(); // Get all categories
