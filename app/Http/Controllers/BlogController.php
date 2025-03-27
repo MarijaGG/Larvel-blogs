@@ -31,7 +31,8 @@ class BlogController extends Controller
     
 
     public function edit(Blog $blog) {
-        return view("blogs.edit", compact("blog"));
+        $categories = Category::all(); // Get all categories
+        return view('blogs.edit', compact('blog', 'categories'));
     }
 
     public function destroy(Blog $blog) {
@@ -39,13 +40,22 @@ class BlogController extends Controller
         return redirect("/");
     }
 
-    public function update(Request $request, Blog $blog) {
-        $validated = $request->validate([
-          "content" => ["required"],
-         ]);
+    public function update(Request $request, $id)
+{
+    // Validate the request
+    $validated = $request->validate([
+        'content' => 'required|string|max:255',
+        'category_id' => 'nullable|exists:categories,id', // Allow NULL and validate category ID if present
+    ]);
 
-        $blog->content = $validated["content"];
-        $blog->save();
+    // Find the blog post
+    $blog = Blog::findOrFail($id);
+
+    $blog->update([
+        'content' => $request->content,
+        'category_id' => $request->category_id ?: null, // If no category is selected, store NULL
+    ]);
+
 
         return redirect("/blogs/" . $blog->id);;
 

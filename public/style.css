@@ -1,62 +1,101 @@
 /* General styles for html and body */
 html, body {
-    height: 100%;
-    margin: 0;
- }
- 
- body {
-    text-align: center;
- }
- 
- /* Header styling */
- header {
-    border-bottom: 1px solid black;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
- }
- 
- header ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    padding: 0;
-    margin: 0;
-    list-style: none;
- }
- 
- header ul li {
-    display: flex;
-    justify-content: center; /* Center text horizontally */
-    align-items: center; /* Center text vertically */
-    list-style-type: none;
-    padding: 7px 10px;
-    text-align: center;
-    height: 40px; /* Ensure there's a height to center within */
- }
- 
- /* Styling for the list of posts from foreach */
- ul.posts {
-    display: flex;
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center items horizontally */
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    padding-top: 20px;
- }
- 
- .content {
-    display: flex;
-    justify-content: center; /* Center text horizontally */
-    align-items: center; /* Center text vertically */
-    list-style-type: none;
-    text-align: center;
-    padding: 5px 5px;
- }
- 
- .error {
-    color: red;
-    font-weight: bolder;
- }
+   height: 100%;
+   margin: 0;
+   padding: 0; 
+   font-family: 'Roboto', sans-serif;
+   background: linear-gradient(180deg, #a9a9a9, #808080, #696969, #505050);
+}
+
+body {
+   text-align: center;
+}
+
+/* Header styling */
+header {
+   background-color: black; /* Set the header background color to black */
+   border-bottom: 1px solid black;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   color: white; /* Set the header text color to white */
+}
+
+header ul {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 20px;
+   padding: 0;
+   margin: 0;
+   list-style: none;
+}
+
+header ul li {
+   display: flex;
+   justify-content: center; /* Center text horizontally */
+   align-items: center; /* Center text vertically */
+   list-style-type: none;
+   padding: 7px 10px;
+   text-align: center;
+   height: 40px; /* Ensure there's a height to center within */
+}
+
+/* Make sure links inside the header are white */
+header a {
+   color: white; /* Set the color of links inside the header to white */
+   text-decoration: none !important;
+   transition: transform 0.2s ease; /* Smooth transition for the scaling effect */
+}
+
+header a:hover {
+   transform: scale(1.1); /* Makes the link 10% larger when hovered */
+   color: rgb(161, 160, 160); /* Dark color on hover */
+}
+
+/* Styling for the list of posts from foreach */
+ul.posts {
+   display: flex;
+   flex-direction: column; /* Stack items vertically */
+   align-items: center; /* Center items horizontally */
+   padding: 0;
+   margin: 0;
+   list-style: none;
+   padding-top: 20px;
+}
+
+.content {
+   display: flex;
+   justify-content: center; /* Center text horizontally */
+   align-items: center; /* Center text vertically */
+   list-style-type: none;
+   text-align: center;
+   padding: 5px 5px;
+}
+
+a {
+  text-decoration: none !important;
+  color: black;
+  transition: transform 0.2s ease; /* Smooth transition for the scaling effect */
+}
+
+a:hover {
+  transform: scale(1.1); /* Makes the link 10% larger when hovered */
+  color: rgb(57, 57, 57);
+}
+
+button, input{
+  background-color: black;
+  color:white;
+  transition: transform 0.2s ease; /* Smooth transition for the scaling effect */
+}
+
+button:hover {
+  transform: scale(1.1); /* Make the button 10% bigger on hover */
+  background-color:rgb(57, 57, 57);
+}
+
+h1 {
+   font-family: 'Pacifico', cursive; /* Apply the Pacifico font */
+   letter-spacing: 2px; /* Optional: Adds letter spacing to make it look more striking */
+}

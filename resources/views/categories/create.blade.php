@@ -10,7 +10,7 @@
   @error("category_name")
   <p>{{ $message }}</p>
   @enderror
-
+<br> <br>
   <button>Saglabāt</button>
 </form>
 
